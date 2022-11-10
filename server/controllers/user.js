@@ -61,9 +61,7 @@ export const signup = async (req, res) => {
 };
 
 export const getAccountDetails = async (req, res) => {
-  console.log(req.params)
   const { email } = req.params;
-  console.log(email);
 
   try {
     const user = await UserModal.findOne({ email });
@@ -76,27 +74,19 @@ export const getAccountDetails = async (req, res) => {
 
 export const editAccount = async (req, res) => {
   const { name, imageUrl, email } = req.body;
-  console.log(req.body);
-  console.log(name);
-  console.log(imageUrl);
-  console.log("editing");
 
   if (!req.userId) {
-    console.log("Unatuhtendiacted");
     return res.json({ message: "Unauthenticated" });
   }
 
   try {
     const user = await UserModal.findOne({ email });
-    console.log("i am here");
     user.name = name;
     user.imageUrl = imageUrl;
 
     const updatedUser = await UserModal.findByIdAndUpdate(user._id, user, {
       new: true,
     });
-    console.log("i am here 2");
-    console.log(updatedUser);
     res.json(updatedUser);
   } catch (error) {
     console.log(error);

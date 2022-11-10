@@ -9,7 +9,6 @@ const Account = () => {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("profile")).result
   );
-  console.log(user);
   const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
 
@@ -25,7 +24,6 @@ const Account = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitting");
     dispatch(editAccount({ ...user }));
     setEdit(false);
   };

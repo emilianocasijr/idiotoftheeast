@@ -19,9 +19,6 @@ const CreateForm = () => {
     id ? state.posts.posts.find((message) => message._id === id) : null
   );
   
-  useSelector((state) => {
-    console.log(state);
-  });
   const dispatch = useDispatch();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem("profile"));

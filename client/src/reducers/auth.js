@@ -10,7 +10,6 @@ const authReducer = (state = { authData: null }, action) => {
       return { ...state, authData: null, loading: false, errors: null };
     case actionType.EDIT_ACCOUNT:
       const oldLocalStorage = JSON.parse(localStorage.getItem("profile"));
-      console.log(oldLocalStorage);
       localStorage.setItem(
         "profile",
         JSON.stringify({ ...oldLocalStorage, result: { ...action?.data } })

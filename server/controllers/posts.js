@@ -74,12 +74,10 @@ export const createPost = async (req, res) => {
   const post = req.body;
 
   if (req.userId !== process.env.ADMIN_ID) {
-    console.log("rejected");
     return res
       .status(400)
       .json({ message: "Only admin accounts can create posts" });
   }
-  console.log("allowed");
 
   const newPostMessage = new PostMessage({
     ...post,
