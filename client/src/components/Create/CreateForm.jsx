@@ -36,20 +36,15 @@ const CreateForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (id === 0) {
-      dispatch(createPost({ ...postData, name: user?.result?.name }, history));
-      clear();
-    } else {
-      dispatch(updatePost(id, { ...postData, name: user?.result?.name }));
-      clear();
-    }
+    dispatch(createPost({ ...postData, name: user?.result?.name }, history));
+    clear();
   };
 
   if (!user?.result?.name) {
     return (
       <Paper className={classes.paper} elevation={6}>
         <Typography variant='h6' align='center'>
-          Please Sign In to create your own memories and like other's memories.
+          Please Sign In to create a post.
         </Typography>
       </Paper>
     );
@@ -74,7 +69,7 @@ const CreateForm = () => {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant='h6'>'Creating a Memory'</Typography>
+        <Typography variant='h4'>Creating a Post</Typography>
         <TextField
           name='title'
           variant='outlined'
