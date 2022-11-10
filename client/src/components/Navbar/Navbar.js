@@ -6,6 +6,8 @@ import {
   Avatar,
   Button,
   Grid,
+  List,
+  Container,
 } from "@material-ui/core";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -14,6 +16,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import RedditIcon from "@material-ui/icons/Reddit";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import LocalCafeIcon from '@material-ui/icons/LocalCafe';
 
 import idiotOfTheEastLogo from "../../images/idiotOfTheEastLogo.png";
 import idiotOfTheEastText from "../../images/idiotOfTheEastText.webp";
@@ -65,6 +68,29 @@ const Navbar = () => {
           height='200px'
         />
       </Link>
+      <List className={classes.socials}>
+        <Container>
+          <Typography>Follow me on</Typography>
+          <a href="https://www.instagram.com/idiotoftheeast/">
+            <InstagramIcon fontSize='large' />
+          </a>
+          <a href="https://www.facebook.com/IdiotOfTheEast/">
+            <FacebookIcon fontSize='large' />
+          </a>
+          <a href="https://www.reddit.com/user/IdiotoftheEast/">
+            <RedditIcon fontSize='large' />
+          </a>
+        </Container>
+        <Container>
+          <Typography>Support me</Typography>
+          <a href="https://www.patreon.com/IdiotoftheEast">
+            <AttachMoneyIcon fontSize='large' />
+          </a>
+          <a href="https://ko-fi.com/idiotoftheeast">
+            <LocalCafeIcon fontSize='large' />
+          </a>
+        </Container>
+      </List>
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
           <div className={classes.profile}>
@@ -103,7 +129,6 @@ const Navbar = () => {
           </Button>
         )}
       </Toolbar>
-      
     </AppBar>
   );
 };

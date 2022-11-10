@@ -23,7 +23,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       flexDirection: "column",
-      marginTop: '-30px'
+      marginTop: "-30px",
     },
   },
   heading: {
@@ -61,6 +61,14 @@ export default makeStyles((theme) => ({
       justifyContent: "center",
     },
   },
+  socials: {
+    display: "flex",
+    minWidth: '400px',
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+      flexDirection: "column",
+    },
+  },
   logout: {
     marginLeft: "20px",
   },
@@ -68,9 +76,9 @@ export default makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     textAlign: "center",
-    margin: '0 10px',
-    textDecoration: 'none',
-    color: 'black'
+    margin: "0 10px",
+    textDecoration: "none",
+    color: "black",
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
