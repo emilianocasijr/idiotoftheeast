@@ -11,9 +11,8 @@ export default makeStyles((theme) => ({
   media: {
     borderRadius: '20px',
     objectFit: 'cover',
-    width: '100%',
-    maxHeight: '600px',
-
+    width: 'calc(100% + 32px)',
+    marginLeft: '-16px',
   },
   card: {
     display: 'flex',
